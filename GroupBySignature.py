@@ -1,5 +1,12 @@
 def group_by_signature(words: list) -> list:
-    pass
+    import collections
+    grouped_words = collections.defaultdict(list)
+    for word in words: 
+        if not word:
+            continue
+        signature = "".join(sorted(word))
+        grouped_words[signature].append(word)
+    return list(grouped_words.values())
 
 if __name__ == "__main__":
     # Example 1
